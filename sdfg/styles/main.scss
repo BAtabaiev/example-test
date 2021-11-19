@@ -1,0 +1,34 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+
+@import "./blocks/body";
+@import "./blocks/page__title";
+@import "./blocks/product";
+@import "./blocks/star";
+@import "./blocks/stars";
+@import "./blocks/selected";
+@import "./blocks/slide";
+@import "./blocks/option";
+
+.show__onPhone {
+  margin: 0 0 14px;
+  @include onTablet {
+    display: none;
+  }
+}
+
+.show__onTablet {
+  display: none;
+
+  @include onTablet {
+    display: flex;
+  }
+}
+
+.show__onDesktop {
+  display: none;
+
+  @include onDesktop {
+    display: inline;
+  }
+}

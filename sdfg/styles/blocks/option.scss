@@ -1,0 +1,129 @@
+.option {
+  max-width: 900px;
+  margin: 0 auto;
+
+  @include onTablet {
+    width: 600px;
+  }
+
+  @include onDesktop {
+    width: 900px;
+  }
+
+  &__title {
+    text-align: center;
+    margin: 44px 0 22px;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 33px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      margin: 62px 0 34px;
+    }
+
+    @include onDesktop {
+      text-align: start;
+      margin-top: 0;
+      margin-bottom: 20px;
+      padding-left: 10px;
+    }
+  }
+
+  &__product {
+    flex-shrink: 0;
+    box-sizing: border-box;
+    width: 265px;
+
+    @include onTablet {
+      &:nth-child(odd) {
+        margin-right: 40px;
+      }
+    }
+
+    @include onDesktop {
+      margin-right: 40px;
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+    height: 265px;
+    width: 265px;
+    margin: 0 0 14px;
+    transition: 300ms;
+
+    @include onTablet {
+        &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 5px rgba(0,0,0,0.5);
+      }
+    }
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    background-color: #{$buttonADD-color};
+    opacity: 80%;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 33px;
+    letter-spacing: 1px;
+
+    @include onTablet {
+      font-size: 22px;
+      letter-spacing: 2px;
+    }
+
+    &-old {
+      display: none;
+      text-decoration: line-through;
+
+      @include onDesktop {
+        display: flex;
+        margin: 0;
+        padding-right: 14px;
+      }
+    }
+
+    &-new {
+      margin: 0;
+      color: #{$redish-color};
+    }
+
+    @include onDesktop {
+      display: flex;
+      position: absolute;
+      bottom: 22px;
+      right: 0px;
+      width: max-content;
+      margin: 0;
+      padding: 0 10px;
+      background-color: #{$buttonADD-color};
+      opacity: 100%;
+      font-size: 16px;
+    }
+  }
+
+  &__name {
+    text-align: center;
+    margin: 12px 0 26px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #282828;
+  }
+}
